@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      margin: 0;
+      width: 100%;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .container input[type="text"],
+    .container input[type="email"],
+    .container input[type="tel"],
+    .container textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .container textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    .container button[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .container button[type="submit"]:hover {
+      background-color: #555;
+    }
+    input#phone {
+    padding-right: 700px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h2>Contact Us</h2>
+      <form action="https://formsubmit.co/jeff@mortgageexpertsinc.com" method="POST">
+        <input type="hidden" name="_next" value="mortgageThankyou.html">
+
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div>
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+        </div>
+
+        <div>
+          <label for="subject">Message:</label>
+          <textarea id="subject" name="subject" placeholder="Your Message" rows="6" required></textarea>
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
