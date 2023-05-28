@@ -1,0 +1,210 @@
+body {
+
+	font-family: sans-serif;
+
+
+
+
+}
+
+
+.mortgageTop {
+  background-image: url("images/house1.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 200px; 
+  
+  overflow: hidden;
+  color: white;
+  padding-right: 0px;
+  display: flex;
+  height: 400px;
+  white-space: nowrap;
+  
+}
+.mortgageTopRefinance{
+  background-image: url("images/house2.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 200px; 
+  
+  overflow: hidden;
+  color: white;
+  padding-right: 0px;
+  display: flex;
+  height: 400px;
+  white-space: nowrap;
+}
+.mortgageTopPurchase{
+  background-image: url("images/house3.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 200px; 
+  
+  overflow: hidden;
+  color: white;
+  padding-right: 0px;
+  display: flex;
+  height: 400px;
+  white-space: nowrap;
+}
+.mortgageTopContact{
+  background-image: url("images/house4.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 200px; 
+  
+  overflow: hidden;
+  color: white;
+  padding-right: 0px;
+  display: flex;
+  height: 400px;
+  white-space: nowrap;
+}
+.text-container{
+  background-color: rgb(252, 252, 252, .6);
+  padding-right: 100px;
+  max-width: 500px;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin:160px;
+  padding-bottom: 300px;
+  margin-right: 50px;
+
+
+
+}
+
+.topnav {
+  overflow: hidden;
+  padding:1px;
+  background-image: linear-gradient(to right, #cccccc, #dbdbdb);
+}
+
+  .topnav a {
+    float: right;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0px 30px;
+    padding-top: 30px;
+    text-decoration: none;
+    font-size: 28px;
+    transition-duration: 0.2s;
+  }
+  .topnav > img{
+    padding-top: 0px !important; 
+  }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+      padding-top: 25px;
+      transition-duration: 0.2s;
+      overflow: hidden;
+    }
+
+
+
+
+
+
+p {
+	font-family: 'Arial', sans-serif;
+	font-size: 27px;
+	line-height: 1.5;
+	margin: 0 0 1em 0;
+	text-align: justify;
+	
+  }
+
+
+  body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Main section */
+  main {
+	background-color: #fff;
+	color: #333;
+	padding: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  }
+  
+  h1 {
+	font-size: 48px;
+	margin: 0;
+  }
+  
+  p {
+	font-size: 24px;
+	line-height: 1.5;
+  }
+  
+  button {
+	background-color: rgb(23, 51, 85);
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-out;
+	border: 2px solid rgb(23, 51, 85);
+  }
+  
+  button:hover {
+	background-color: #fff;
+	color: rgb(23, 51, 85);
+	border: 2px solid rgb(23, 51, 85);
+  }
+  
+  /* Footer section */
+  footer {
+	background-color: rgb(23, 51, 85);
+	color: #fff;
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+  }
+  
+  a:hover {
+	text-decoration: underline;
+  }
+  .modernMakeup{
+	background-color: rgb(245, 245, 245);
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgb(214, 214, 214);
+  }
+  #about{
+	padding: 20px;
+  max-width: 60%;
+  }
+
+  #topInfo h1{
+	font-size: 70px;
+  }
+  #topInfo button{
+	justify-content: center;
+	margin-left: 800px;
+  }

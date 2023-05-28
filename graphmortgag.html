@@ -1,7 +1,7 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<link rel="stylesheet" href="cssformortgage.css">
+<link rel="stylesheet" href="cssGraph.css">
 
 
 <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
@@ -37,149 +37,167 @@
 
 
 <head>
-	<title>Compound Interest Calculator</title>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<style>
- #image {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 50px;
-		}
-		.input {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			margin-bottom: 10px;
-		}
-		.label {
-			margin-right: 10px;
-			font-weight: bold;
-		}
-		.output {
-			margin-top: 20px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		#chart {
-			width: 80%;
-			height: 400px;
-		}
+    <title>Home Mortgage Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #image {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
 
-		body {
-			background-color: #f2f2f2;
-			font-family: Arial, sans-serif;
-		}
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-		}
-		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 50px;
-		}
+        .input {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-		input{
-			padding: 10px;
-			border-radius: 5px;
-			border: none;
-			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-			margin-bottom: 20px;
-			width: 200px;
-		}
-		button {
-			padding: 10px 20px;
+        .label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
 
-		}
+        .output {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        #chart {
+            width: 80%;
+            height: 400px;
+        }
 
-	
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
 
-	</style>
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
 </head>
+
 <body>
-	<div class="container">
+    <div class="container">
+        <div class="input">
+            <label class="label">Loan Amount:</label>
+            <input id="loanAmount" type="number" value="100000" min="0" step="1000">
+        </div>
+        <div class="input">
+            <label class="label">Annual Interest Rate:</label>
+            <input id="interestRate" type="number" value="4.5" min="0" max="100" step="0.1">
+            <span>%</span>
+        </div>
 		<div class="input">
-			<label class="label">Starting Value:</label>
-			<input id="principal" type="number" value="1000" min="0" step="100">
+			<label class="label">Down Payment:</label>
+			<input id="downPayment" type="number" value="0" min="0" step="1000">
 		</div>
-		<div class="input">
-			<label class="label">Annual Interest Rate:</label>
-			<input id="rate" type="number" value="5" min="0" max="100" step="0.1">
-			<span>%</span>
-		</div>
-		<div class="input">
-			<label class="label">Years:</label>
-			<input id="years" type="number" value="10" min="1" max="50">
-		</div>
-		<button onclick="calculate()">Calculate</button>
-		<div class="output">
-			<canvas id="chart"></canvas>
-			<div id="output"></div>
-		</div>
-	</div>
+        <div class="input">
+            <label class="label">Loan Term (Years):</label>
+            <input id="loanTerm" type="number" value="30" min="1" max="50">
+        </div>
+        <button onclick="calculate()">Calculate</button>
+        <div class="output">
+            <canvas id="chart"></canvas>
+            <div id="output"></div>
+        </div>
+    </div>
 
-
-	<script>
-		var chart = new Chart(document.getElementById("chart"), {
-			type: "bar",
-			data: {
-				labels: [],
-				datasets: [{
-					label: "Investment Value",
-					backgroundColor: "#173355",
-					data: []
-				}]
-			},
-			options: {
-				responsive: false,
-				maintainAspectRatio: false,
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true
-						}
-					}]
-				}
-			}
-		});
+    <script>
+        var chart = new Chart(document.getElementById("chart"), {
+            type: "bar",
+            data: {
+                labels: [],
+                datasets: [{
+                    label: "Loan Balance",
+                    backgroundColor: "#173355",
+                    data: []
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
 
 		function calculate() {
-			var principal = document.getElementById("principal").value;
-			var rate = document.getElementById("rate").value / 100;
-			var years = document.getElementById("years").value;
-			var amount = principal * Math.pow(1 + rate, years);
-			var interest = amount - principal;
-			
-			// Update chart for each year
-			chart.data.labels = [];
-			chart.data.datasets[0].data = [];
-			for (var i = 1; i <= years; i++) {
-				var value = principal * Math.pow(1 + rate, i);
-				var yearLabel = "Year " + i;
-				chart.data.labels.push(yearLabel);
-				chart.data.datasets[0].data.push(value);
-			}
-			
-			// Update output text
-			document.getElementById("output").innerHTML = "After " + years + " years, your investment will be worth $" + amount.toFixed(2) + ", with $" + interest.toFixed(2) + " in interest earned.";
-			
-			// Update chart
-			chart.update({
-				duration: 8000,
-				easing: "linear"
-            });
-	}
-</script>
+    var loanAmount = document.getElementById("loanAmount").value;
+    var downPayment = document.getElementById("downPayment").value;
+    var interestRate = document.getElementById("interestRate").value / 100;
+    var loanTerm = document.getElementById("loanTerm").value;
+    var monthlyRate = interestRate / 12;
+    var totalMonths = loanTerm * 12;
+    var loanAmountWithDownPayment = loanAmount - downPayment;
+
+    var monthlyPayment = (loanAmountWithDownPayment * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -totalMonths));
+
+    // Update chart for each month
+    chart.data.labels = [];
+    chart.data.datasets[0].data = [];
+    for (var i = 1; i <= totalMonths; i++) {
+        var interestPaid = loanAmountWithDownPayment * monthlyRate;
+        var principalPaid = monthlyPayment - interestPaid;
+
+        // Check if principalPaid exceeds the remaining loan amount
+        if (principalPaid > loanAmountWithDownPayment) {
+            principalPaid = loanAmountWithDownPayment; // Set principalPaid to the remaining loan amount
+        }
+
+        loanAmountWithDownPayment -= principalPaid;
+        var monthLabel = "Month " + i;
+        chart.data.labels.push(monthLabel);
+        chart.data.datasets[0].data.push(loanAmountWithDownPayment >= 0 ? loanAmountWithDownPayment : 0); // Prevent negative loan balance
+    }
+
+    // Update output text
+    document.getElementById("output").innerHTML = "Your estimated monthly mortgage payment is: $" + monthlyPayment.toFixed(2);
+
+    // Update chart
+    chart.update({
+        duration: 8000,
+        easing: "linear"
+    });
+}
+    </script>
 </body>
 
 <br><br><br><br><br><br><br><br><br><br><br><br>
